@@ -109,8 +109,10 @@ db.passengers.find().toArray();
 db.passengers.find().forEach((passenger) => print(tojson(passenger)));
 
 // use projection to only return the name field and id field 
+db.passengers.find({}, { name: 1 });
 
 // use project to only return the name field and exclude the id field 
+db.passengers.find({}, { name: 1, _id: 0 });
 
 // use update Albert Twostone to embed an array inside of a document using this data 
 // hobbies: [
@@ -118,6 +120,6 @@ db.passengers.find().forEach((passenger) => print(tojson(passenger)));
 //   "cooking"
 // ]
 
-// access the hobbies array in a Albert Twostone document 
+// access the hobbies array in a Albert Twostone document
 
 // find an documents that has one of its hobbies as sports 
