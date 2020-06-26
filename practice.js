@@ -41,10 +41,29 @@ db.flightsData.deleteMany({ distance: 12000 });
 db.flightsData.deleteOne({ arrivalAirport: 'TXL' });
 
 // update one document in flightsData collection
+db.flightsData.updateOne({
+  departureAirport: 'LHR'
+}, {
+  $set: {
+    departureAirport: 'KSAN'
+  }
+});
 
 // update all documents in flightsData collection
+db.flightsData.updateMany({}, {
+  $set: {
+    intercontinental: false
+  }
+});
 
 // update all documents with similar criteria in flightsData collection
+db.flightsData.updateMany({
+  distance: 12000
+}, {
+  $set: {
+    distance: 20000
+  }
+});
 
 // return all documents in flightsData collection and also format it in a pretty way
 
