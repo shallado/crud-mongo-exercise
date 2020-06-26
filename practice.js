@@ -119,7 +119,17 @@ db.passengers.find({}, { name: 1, _id: 0 });
 //   "sports",
 //   "cooking"
 // ]
+db.passengers.updateOne({ name: 'Albert Twostone' }, {
+  $set: {
+    hobbies: [
+      'sports',
+      'cooking'
+    ]
+  }
+});
 
 // access the hobbies array in a Albert Twostone document
+db.passengers.findOne({ name: 'Albert Twostone' }).hobbies;
 
 // find an documents that has one of its hobbies as sports 
+db.passengers.find({ hobbies: 'sports' });
