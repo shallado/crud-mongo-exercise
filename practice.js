@@ -99,17 +99,18 @@ db.flightsData.updateMany({}, {
 // find all documents that have a status object with description field with value of on-time
 db.flightsData.find({ 'status.description': 'on-time' }).pretty();
 
-
 // -----------------------------------------------------------------------
 // working with passengers collection
 
-// fetch all the documents and not return a cursor so that all data is displayed and stop at the first 20 documents *
+// fetch all the documents and not return a cursor so that all data is displayed and stop at the first 20 documents 
+db.passengers.find().toArray();
 
-// print out each document in this collection * 
+// print out each document in this collection 
+db.passengers.find().forEach((passenger) => print(tojson(passenger)));
 
-// use projection to only return the name field and id field *
+// use projection to only return the name field and id field 
 
-// use project to only return the name field and exclude the id field *
+// use project to only return the name field and exclude the id field 
 
 // use update Albert Twostone to embed an array inside of a document using this data 
 // hobbies: [
@@ -117,6 +118,6 @@ db.flightsData.find({ 'status.description': 'on-time' }).pretty();
 //   "cooking"
 // ]
 
-// access the hobbies array in a Albert Twostone document *
+// access the hobbies array in a Albert Twostone document 
 
-// find an documents that has one of its hobbies as sports *
+// find an documents that has one of its hobbies as sports 
