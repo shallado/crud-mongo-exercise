@@ -66,12 +66,16 @@ db.flightsData.updateMany({
 });
 
 // return all documents in flightsData collection and also format it in a pretty way
+db.flightsData.find().pretty();
 
 // find all flights that are intercontinental in flightsData collection
+db.flightsData.find({ intercontinental: true });
 
 // find all flights that are greater than 10000 in flightsData collection
+db.flightsData.find({ distance: { $gt: 10000 } });
 
 // find one flight that is greater than 900 in flightsData collection
+db.flightsData.find({ distance: { $gt: 900 } });
 
 // replace document with new data in flightsData collection
 
