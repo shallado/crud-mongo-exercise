@@ -78,10 +78,28 @@ db.flightsData.find({ distance: { $gt: 10000 } });
 db.flightsData.find({ distance: { $gt: 900 } });
 
 // replace document with new data in flightsData collection
+db.flightsData.replaceOne({
+  _id: ObjectId("5ef54d7431b3045b4f965469")
+}, {
+  firstName: 'Bill',
+  lastName: 'Gates',
+  age: 45
+});
 
-// update all documents by adding embedded document with fields description = on-time and lastUpdated
+// update all documents by adding embedded document name status with fields description = on-time and lastUpdated
+db.flightsData.updateMany({}, {
+  $set: {
+    status: {
+      description: 'on-time',
+      lastUpdated: 'today'
+    }
+  }
+});
 
 // find all documents that have a status object with description field with value of on-time
+db.flightsData.find({ 'status.description': 'on-time' }).pretty();
+
+
 // -----------------------------------------------------------------------
 // working with passengers collection
 
