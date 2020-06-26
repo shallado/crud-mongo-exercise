@@ -31,19 +31,22 @@ db.flightsData.insertMany([{
   "intercontinental": false
 }]);
 
-// return all documents in flightsData collection and also format it in a pretty way
-
 // delete all documents in flightsData collection
+db.flightsData.deleteMany({});
 
 // delete all documents with similar criteria in flightsData collection
+db.flightsData.deleteMany({ distance: 12000 });
 
 // delete one document in flightsData collection
+db.flightsData.deleteOne({ arrivalAirport: 'TXL' });
 
 // update one document in flightsData collection
 
 // update all documents in flightsData collection
 
 // update all documents with similar criteria in flightsData collection
+
+// return all documents in flightsData collection and also format it in a pretty way
 
 // find all flights that are intercontinental in flightsData collection
 
